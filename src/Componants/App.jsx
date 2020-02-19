@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 
 class App extends Component {
     state = {
-        text: 'some string',
-        hasLoaded: false
+        text: 'whatever text you enter in the box below.',
+        hasLoaded: false,
     }
     handleChange = (e) => {
         this.setState({ text: e.target.value })
     }
-    handleClick = () => this.setState({hasLoaded: true})
+    // componentDidMount = () => this.setState({hasLoaded: true})
 
+    handleClick = () => this.setState({hasLoaded: true})
+    
     render() {
-        if (this.hasLoaded === true) {
+        if (this.state.hasLoaded === true) {
             return (
                 <React.Fragment>
                     <h1>Hello {this.props.name} you are supposed to talk about {this.state.text}</h1>
